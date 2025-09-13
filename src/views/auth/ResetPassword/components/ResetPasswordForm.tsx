@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Button from '@/components/ui/Button'
+import Button from '@/components/ui/button'
 import { FormItem, Form } from '@/components/ui/Form'
 import PasswordInput from '@/components/shared/PasswordInput'
 import { apiResetPassword } from '@/services/AuthService'

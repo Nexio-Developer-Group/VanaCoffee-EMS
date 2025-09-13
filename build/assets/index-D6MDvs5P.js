@@ -1,1 +1,0 @@
-import{j as e}from"./index-CVAlkAM6.js";const t=()=>e.jsx(e.Fragment,{}),r=()=>e.jsx("div",{className:"w-full px-16 flex flex-col justify-center items-center",children:e.jsx(t,{})});export{r as default};

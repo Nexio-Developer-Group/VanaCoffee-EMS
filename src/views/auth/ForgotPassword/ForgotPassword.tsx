@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Alert from '@/components/ui/Alert'
-import Button from '@/components/ui/Button'
+import Button from '@/components/ui/button'
 import ActionLink from '@/components/shared/ActionLink'
 import ForgotPasswordForm from './components/ForgotPasswordForm'
 import useTimeOutMessage from '@/utils/hooks/useTimeOutMessage'

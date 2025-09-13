@@ -1,6 +1,6 @@
 export { default as Alert } from './Alert'
 export { default as Avatar } from './Avatar'
-export { default as Button } from './Button'
+export { default as Button } from './button'
 export { default as ConfigProvider } from './ConfigProvider'
 export { default as Drawer } from './Drawer'
 export { default as Dropdown } from './Dropdown'
@@ -17,7 +17,7 @@ export { default as Tooltip } from './Tooltip'
 
 export type { AlertProps } from './Alert'
 export type { AvatarProps, AvatarGroupProps } from './Avatar'
-export type { ButtonProps } from './Button'
+export type { ButtonProps } from './button'
 export type { Config } from './ConfigProvider'
 export type { DrawerProps } from './Drawer'
 export type {
