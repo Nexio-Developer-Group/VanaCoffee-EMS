@@ -1,0 +1,13 @@
+@import './tailwind/index.css';
+@import './components/index.css';
+@import './template/index.css';
+@import './vendors/index.css';
+
+
+body {
+  font-family: 'SoDo Sans', apple-system, BlinkMacSystemFont, Roboto, Arial,  sans-serif;
+}
+
+.font-spacing-wider {
+  letter-spacing: 0.15em !important;
+}
