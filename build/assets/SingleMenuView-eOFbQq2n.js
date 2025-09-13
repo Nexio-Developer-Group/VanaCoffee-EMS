@@ -1,0 +1,1 @@
+import{j as e}from"./index-CNgaHLbL.js";import"https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";import"https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";const n=()=>e.jsx("div",{children:"Single Menu View"});export{n as default};

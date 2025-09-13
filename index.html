@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vana Coffee Cafe | Best Coffee Shop in Udaipur near Gulab Bagh</title>
-    
-    <meta name="description" content="Vana Coffee Cafe in Udaipur near Gulab Bagh offers freshly brewed coffee, artisanal beverages, and a cozy ambiance. Perfect spot to relax, work, or catch up with friends." />
-    <meta name="keywords" content="Vana Coffee Cafe Udaipur, coffee shop near Gulab Bagh, best cafe Udaipur, specialty coffee Udaipur, cafe near Gulab Bagh" />
-    <meta name="author" content="Vana Coffee Cafe" />
-    <meta name="robots" content="index, follow" />
-    
-    <!-- Structured Data -->
-    <script type="application/ld+json">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vana Coffee Cafe | Best Coffee Shop in Udaipur near Gulab Bagh</title>
+
+  <meta name="description"
+    content="Vana Coffee Cafe in Udaipur near Gulab Bagh offers freshly brewed coffee, artisanal beverages, and a cozy ambiance. Perfect spot to relax, work, or catch up with friends." />
+  <meta name="keywords"
+    content="Vana Coffee Cafe Udaipur, coffee shop near Gulab Bagh, best cafe Udaipur, specialty coffee Udaipur, cafe near Gulab Bagh" />
+  <meta name="author" content="Vana Coffee Cafe" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "CafeOrCoffeeShop",
@@ -39,12 +42,37 @@
       "servesCuisine": "Coffee, Snacks, Bakery",
     }
     </script>
-    
-    <link rel="shortcut icon" href="favicon.png" type="image/png">
-  </head>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyAtlgrVcUFUy1Qd3CVnTzrjSqF_UXlT3N8",
+      authDomain: "vana-ems.firebaseapp.com",
+      projectId: "vana-ems",
+      storageBucket: "vana-ems.firebasestorage.app",
+      messagingSenderId: "446089693370",
+      appId: "1:446089693370:web:731d6ab75ed0dc68271a83",
+      measurementId: "G-YPH5PBLCD9"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
+  <link rel="shortcut icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>
