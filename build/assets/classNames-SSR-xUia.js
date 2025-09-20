@@ -1,0 +1,1 @@
+import{j as o,d as a,Q as i,J as r}from"./index-BrHdttGE.js";const n="/img/logo/",u=s=>{const{type:t="full",mode:l="light",className:e,imgClass:c,style:g,logoWidth:m="auto"}=s;return o.jsx("div",{className:a("logo",e),style:{...g,width:m},children:o.jsx("img",{className:c,src:`${n}logo-${l}-${t}.png`,alt:`${i} logo`})})};function N(...s){return r(a(s))}export{u as L,N as c};

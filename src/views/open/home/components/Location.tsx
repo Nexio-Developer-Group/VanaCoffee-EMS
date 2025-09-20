@@ -58,7 +58,7 @@ const Location = () => {
                   <Phone className="h-6 w-6 text-caramel mt-1 flex-shrink-0" />
                   <div>
                     <h5 className="font-semibold text-coffee-dark mb-2">Contact Us</h5>
-                    <p className="text-muted-foreground mb-2">+91 7821864174</p>
+                    <p className="text-muted-foreground mb-2">+91 88756 40905</p>
                   </div>
                 </div>
               </CardContent>
@@ -68,12 +68,13 @@ const Location = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                   className="bg-white hover:bg-primary-deep transition-colors text-primary-text border-primary-text hover:text-white hover:border-white flex items-center space-x-2"
-                  aria-label="Get directions to Vana Coffee Cafe"
+                  aria-label="Get directions to vans Coffee Cafe"
                 onClick={() =>
                   window.open(
-                    "https://www.google.com/maps/dir/?api=1&destination=24.57217517811864,73.69017057558877",
+                    "https://www.google.com/maps/dir/?api=1&destination=24.5755247,73.6918862",
                     "_blank"
                   )
+
                 }
               >
                 <Navigation className="h-4 w-4" />
@@ -81,8 +82,8 @@ const Location = () => {
               </Button>
               <Button
                 className="bg-white hover:bg-primary-deep transition-colors text-primary-text border-primary-text hover:text-white hover:border-white flex items-center space-x-2"
-                aria-label="Call Vana Coffee Cafe"
-                onClick={() => window.open("tel:+917821864174")}
+                aria-label="Call vans Coffee Cafe"
+                onClick={() => window.open("tel:+918875640905")}
               >
                 <Phone className="h-4 w-4" />
                 <span>Call Now</span>
@@ -94,8 +95,7 @@ const Location = () => {
           <Card className="shadow-warm overflow-hidden">
   <CardContent className="p-0">
     <div className="relative aspect-[4/3] w-full">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3628.493040933573!2d73.69017057558877!3d24.57217517811864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967e5ab8eb06ef9%3A0x9740323b2c786116!2sGulab%20Bagh!5e0!3m2!1sen!2sin!4v1757768134982!5m2!1sen!2sin"
+      <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d357.6501011622895!2d73.69188618599709!3d24.575524746290846!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sin!4v1758383987420!5m2!1sen!2sin" 
         className="absolute inset-0 w-full h-full"
         style={{ border: 0 }}
         loading="lazy"
@@ -106,7 +106,7 @@ const Location = () => {
       <div className="absolute inset-0 flex items-center justify-center bg-black/10 pointer-events-none">
         <div className="text-center text-white px-4">
           <MapPin className="h-16 w-16 mx-auto mb-4 text-caramel" />
-          <h3 className="text-xl font-semibold mb-2">Vana Coffee Cafe</h3>
+          <h3 className="text-xl font-semibold mb-2">Vans Cafe</h3>
           <p className="text-warm-white/80">Near Gulab Bagh, Udaipur</p>
         </div>
       </div>

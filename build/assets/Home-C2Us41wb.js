@@ -1,1 +1,0 @@
-import{j as o}from"./index-CNgaHLbL.js";import"https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";import"https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";const m=()=>o.jsx("div",{children:"Home"});export{m as default};

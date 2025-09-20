@@ -18,7 +18,7 @@ const Simple = ({ children, content, ...rest }: SimpleProps) => {
             <header className="bg-white z-50 sticky top-0 border-b border-gray-200 shadow-xs">
                 <div className="mx-auto px-2 sm:px-10 py-4 flex items-center justify-between">
                     <Link to="/home">
-                        <Logo logoWidth={120} />
+                        <Logo logoWidth={80} />
                     </Link>
                     <div className='flex items-center sm:gap-10'>
                         <a href="#menu" className='text-primary-text hidden sm:flex  cusror-pointer font-bold font-spacing-wider'>MENU</a>
@@ -31,9 +31,9 @@ const Simple = ({ children, content, ...rest }: SimpleProps) => {
                             size='sm'
                             onClick={() =>
                                 window.open(
-                                    "https://www.google.com/maps/dir/?api=1&destination=24.57217517811864,73.69017057558877",
-                                    "_blank"
-                                )
+                    "https://www.google.com/maps/dir/?api=1&destination=24.5755247,73.6918862",
+                    "_blank"
+                  )
                             }
                         >
                             <MapPin className='h-4 w-4 mr-2' />Visit Us

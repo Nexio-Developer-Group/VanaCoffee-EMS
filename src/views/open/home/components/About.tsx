@@ -33,17 +33,17 @@ const About = () => {
           {/* Content */}
           <div className="animate-fade-in">
             <h2 className="font-playfair text-primary-deep text-4xl md:text-5xl font-bold text-coffee-dark mb-6">
-              About Vana Coffee
+              About Van&apos;s Cafe
             </h2>
             <p className="sm:text-lg text-muted-foreground mb-8 leading-relaxed">
-              Located in the heart of Udaipur near the beautiful Gulab Bagh, Vana Coffee Cafe 
+              Located in the heart of Udaipur near the beautiful Gulab Bagh, Van&apos;s Cafe 
               is your destination for exceptional coffee experiences. We&apos;ve created a space where 
               quality meets affordability, and every cup tells a story of passion and craftsmanship.
             </p>
             <p className="sm:text-lg text-muted-foreground mb-8 leading-relaxed">
               Our mission is simple: to serve the best coffee in Udaipur while providing an 
               atmosphere that feels like home. Whether you&apos;re catching up with friends, working 
-              on your laptop, or simply enjoying a quiet moment, Vana Coffee is here for you.
+              on your laptop, or simply enjoying a quiet moment, Van&apos;s Cafe is here for you.
             </p>
 
             {/* Features Grid */}
@@ -67,7 +67,7 @@ const About = () => {
             <div className="relative">
               <img 
                 src={cafeInteriorImage} 
-                alt="Vana Coffee Cafe Interior"
+                alt="vans Coffee Cafe Interior"
                 className="w-full h-96 lg:h-[500px] object-cover rounded-lg shadow-coffee"
               />
               <div className="absolute inset-0 bg-gradient-coffee opacity-20 rounded-lg"></div>

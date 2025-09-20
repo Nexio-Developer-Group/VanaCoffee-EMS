@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div>
             <Link to="/home">
-              <Logo className="hidden lg:block"  mode="dark" logoWidth={150} imgClass="mb-3"/>
+              <Logo className="hidden lg:block"  mode="dark" logoWidth={120} imgClass="mb-3"/>
             </Link>
             <p className="text-warm-white/80 mb-4 leading-relaxed">
               Udaipur&apos;s finest coffee destination near Gulab Bagh.
@@ -61,7 +61,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-caramel flex-shrink-0" />
-                <span className="text-warm-white/80 text-sm">+91 78218 64174</span>
+                <span className="text-warm-white/80 text-sm">+91 88756 40905</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Clock className="h-5 w-5 text-caramel flex-shrink-0" />
@@ -76,7 +76,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-warm-white/20 mt-8 pt-8 text-center">
             <p className="text-warm-white/60 text-sm">
-            © {new Date().getFullYear()} Vana Coffee Cafe. All rights reserved. |
+            © {new Date().getFullYear()} vans Coffee Cafe. All rights reserved. |
             <span className="text-caramel"> Best Coffee in Udaipur</span>
             </p>
         </div>

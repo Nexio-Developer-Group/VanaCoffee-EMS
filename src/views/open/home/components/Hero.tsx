@@ -17,7 +17,7 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 lg:px-6 text-center text-white">
         <div className="max-w-4xl mx-auto animate-fade-in">
           <h1 className="font-playfair text-white text-4xl md:text-7xl font-bold mb-6 leading-tight">
-            Welcome to <span className="text-white">Vana</span>
+            Welcome to <span className="text-white">Vans Cafe</span>
           </h1>
           <p className="text-sm md:text-2xl mb-8 text-warm-white/90 max-w-2xl mx-auto">
             Experience the finest coffee in Udaipur. Premium beans, exceptional ambiance,
@@ -53,7 +53,7 @@ const Hero = () => {
               className="border border-white text-white hover:text-white hover:bg-white/10"
               onClick={() =>
                   window.open(
-                    "https://www.google.com/maps/dir/?api=1&destination=24.57217517811864,73.69017057558877",
+                    "https://www.google.com/maps/dir/?api=1&destination=24.5755247,73.6918862",
                     "_blank"
                   )
                 }
