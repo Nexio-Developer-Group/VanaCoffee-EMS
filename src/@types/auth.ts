@@ -3,6 +3,34 @@ export type SignInCredential = {
     password: string
 }
 
+export type OTPLoginCredential = {
+    phone: string
+    otp: string
+}   
+
+export type sendOtpResponse  = {
+    status: number
+    message?: string
+    error?: string
+}
+
+export type LoginReponse = {
+    status: number
+    message?: string
+    error?: string
+    data?: {
+        token: string
+        user: {
+            userId: string
+            userName?: string
+            roles: string[]
+            avatar?: string
+            email?: string
+            phone: string
+        }
+    }
+}
+
 export type SignInResponse = {
     token: string
     user: {
@@ -43,6 +71,8 @@ export type User = {
     userName?: string | null
     email?: string | null
     authority?: string[]
+    phone?: string | null
+    roles?: string[] // Added roles field
 }
 
 export type Token = {

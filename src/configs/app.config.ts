@@ -14,16 +14,16 @@ export type AppConfig = {
 
 const appConfig: AppConfig = {
     appVersion: '0.0.1',
-    appUrl: 'https://nexiotech.cloud',
-    appName: 'NexioTech',
-    appDescription: 'NexioTech is a platform for all your tech needs.',
-    apiBaseUrl: 'https://api.nexiotech.cloud',
+    appUrl: 'https://vanscafe.shop',
+    appName: 'VansCafe',
+    appDescription: 'Vans Cafe - Best Coffee in Udaipur',
+    apiBaseUrl: 'https://api.vanscafe.shop',
     apiPrefix: '/api',
     authenticatedEntryPath: '/home',
     unAuthenticatedEntryPath: '/sign-in',
     locale: 'en',
     accessTokenPersistStrategy: 'cookies',
-    enableMock: true,
+    enableMock: false,
 }
 
 export default appConfig

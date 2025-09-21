@@ -7,7 +7,7 @@ export { default as Dropdown } from './Dropdown'
 export { default as FormItem } from './Form/FormItem'
 export { default as FormContainer } from './Form/FormContainer'
 export { default as hooks } from './hooks'
-export { default as Input } from './Input'
+export { default as Input } from './Shadcninput'
 export { default as InputGroup } from './InputGroup'
 export { default as Menu } from './Menu'
 export { default as MenuItem } from './MenuItem'
@@ -26,7 +26,7 @@ export type {
     DropdownMenuProps,
 } from './Dropdown'
 export type { FormContainerProps, FormItemProps } from './Form'
-export type { InputProps } from './Input'
+export type { InputProps } from './Shadcninput'
 export type { InputGroupProps, AddonProps } from './InputGroup'
 export type {
     MenuProps,

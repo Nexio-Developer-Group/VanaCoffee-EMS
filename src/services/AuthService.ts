@@ -6,12 +6,33 @@ import type {
     ForgotPassword,
     ResetPassword,
     SignInResponse,
+    sendOtpResponse,
     SignUpResponse,
+    OTPLoginCredential,
+    LoginReponse,
 } from '@/@types/auth'
 
 export async function apiSignIn(data: SignInCredential) {
     return ApiService.fetchDataWithAxios<SignInResponse>({
         url: endpointConfig.signIn,
+        method: 'post',
+        data,
+    })
+}
+
+
+export async function sendOtp(data: { phone: string }) {
+    return ApiService.fetchDataWithAxios<sendOtpResponse>({
+        url: endpointConfig.sendOtp,
+        method: 'post',
+        data,
+    })
+}
+
+
+export async function apiLoginWithOTP(data: OTPLoginCredential) {
+    return ApiService.fetchDataWithAxios<LoginReponse>({
+        url: endpointConfig.otpLogin,
         method: 'post',
         data,
     })
