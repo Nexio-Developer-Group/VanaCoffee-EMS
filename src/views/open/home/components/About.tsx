@@ -33,7 +33,7 @@ const About = () => {
           {/* Content */}
           <div className="animate-fade-in">
             <h2 className="font-playfair text-primary-deep text-4xl md:text-5xl font-bold text-coffee-dark mb-6">
-              About Van&apos;s Cafe
+              About Vans Cafe
             </h2>
             <p className="sm:text-lg text-muted-foreground mb-8 leading-relaxed">
               Located in the heart of Udaipur near the beautiful Gulab Bagh, Van&apos;s Cafe 

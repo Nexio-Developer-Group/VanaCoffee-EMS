@@ -1,82 +1,66 @@
 import Logo from '@/components/template/Logo'
 import Alert from '@/components/ui/Alert'
-import SignInForm from './components/SignInForm'
-// import OauthSignIn from './components/OauthSignIn'
-import ActionLink from '@/components/shared/ActionLink'
+import OtpAuthForm from './components/OtpAuthForm'
 import useTimeOutMessage from '@/utils/hooks/useTimeOutMessage'
 import { useThemeStore } from '@/store/themeStore'
 
 type SignInProps = {
-    signUpUrl?: string
-    forgetPasswordUrl?: string
     disableSubmit?: boolean
 }
 
-export const SignInBase = ({
-    // signUpUrl = '/sign-up',
-    forgetPasswordUrl = '/forgot-password',
-    disableSubmit,
-}: SignInProps) => {
+// eslint-disable-next-line
+export const SignInBase = ({ disableSubmit }: SignInProps) => {
     const [message, setMessage] = useTimeOutMessage()
-
     const mode = useThemeStore(state => state.mode)
+
+    // ✅ handlers for OTP
+    const handleOtpSend = async (phone: string) => {
+        try {
+            console.log('Sending OTP to', phone)
+            // 👉 call your backend here
+            // await api.sendOtp(phone)
+        } catch (err) {
+            console.error(err)
+            setMessage('Failed to send OTP. Please try again.')
+        }
+    }
+
+    const handleOtpVerify = async (phone: string, otp: string) => {
+        try {
+            console.log('Verifying OTP', { phone, otp })
+            // 👉 call your backend here
+            // await api.verifyOtp(phone, otp)
+        } catch (err) {
+            console.error(err)
+            setMessage('Invalid OTP. Please try again.')
+        }
+    }
 
     return (
         <>
-            <div className="mb-6 flex justify-center">
-                <Logo type="full" mode={mode} imgClass="mx-auto" logoWidth={200} />
+            <div className="flex mb-3">
+                <Logo type="long" mode={mode} logoWidth={320} />
             </div>
-            <div className="mb-10">
-                <h3 className="mb-2">Welcome back!</h3>
-                <p className="font-light text-xs text-gray-500">
-                    Please enter your credentials to sign in!
+
+            <div className="mb-10 px-4">
+                <h3 className="mb-2 text-white">Welcome!</h3>
+                <p className="font-light text-xs text-white">
+                    Please enter your mobile number to sign in!
                 </p>
             </div>
+
             {message && (
                 <Alert showIcon className="mb-4" type="danger">
-                    <span className="break-all">{message}</span>
+                    <span className="break-all ">{message}</span>
                 </Alert>
             )}
-            <SignInForm
-                disableSubmit={disableSubmit}
-                setMessage={setMessage}
-                passwordHint={
-                    <div className="mb-7 mt-2">
-                        <ActionLink
-                            to={forgetPasswordUrl}
-                            className="font-semibold heading-text mt-2 underline"
-                            themeColor={true}
-                        >
-                            {/* Forgot password */}
-                        </ActionLink>
-                    </div>
-                }
+
+            {/* ✅ Replaced old SignInForm with OtpAuthForm */}
+            <OtpAuthForm
+                className="px-4 text-white"
+                onOtpSend={handleOtpSend}
+                onOtpVerify={handleOtpVerify}
             />
-            {/* <div className="mt-8">
-                <div className="flex items-center gap-2 mb-6">
-                    <div className="border-t border-gray-200 dark:border-gray-800 flex-1 mt-[1px]" />
-                    <p className="font-semibold heading-text">
-                        or countinue with
-                    </p>
-                    <div className="border-t border-gray-200 dark:border-gray-800 flex-1 mt-[1px]" />
-                </div>
-                <OauthSignIn
-                    disableSubmit={disableSubmit}
-                    setMessage={setMessage}
-                />
-            </div> */}
-            {/* <div>
-                <div className="mt-6 text-center">
-                    <span>{`Don't have an account yet?`} </span>
-                    <ActionLink
-                        to={signUpUrl}
-                        className="heading-text font-bold"
-                        themeColor={false}
-                    >
-                        Sign up
-                    </ActionLink>
-                </div>
-            </div> */}
         </>
     )
 }

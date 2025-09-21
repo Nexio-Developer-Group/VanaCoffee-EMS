@@ -7,6 +7,12 @@ const openRoute: Routes = [
         path: `/`,
         component: lazy(() => import('@/views/open/home')),
         authority: [],
+    },
+    {
+        key: 'menu',
+        path: `/menu`,
+        component: lazy(() => import('@/views/open/menu')),
+        authority: [],
     }
     
 ]

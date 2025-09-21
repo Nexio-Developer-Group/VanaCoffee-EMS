@@ -21,7 +21,7 @@ const Simple = ({ children, content, ...rest }: SimpleProps) => {
                         <Logo logoWidth={80} />
                     </Link>
                     <div className='flex items-center sm:gap-10'>
-                        <a href="#menu" className='text-primary-text hidden sm:flex  cusror-pointer font-bold font-spacing-wider'>MENU</a>
+                        <a href="/menu" className='text-primary-text hidden sm:flex  cusror-pointer font-bold font-spacing-wider'>MENU</a>
                         <Link to="/offers"> <p className='text-primary-text hidden sm:flex  cusror-pointer font-bold font-spacing-wider'>OFFERS</p></Link>
                         <a href='#about' className='text-primary-text hidden sm:flex  cusror-pointer font-bold font-spacing-wider'>ABOUT</a>
                         <a href='#location' className='text-primary-text hidden sm:flex cusror-pointer font-bold font-spacing-wider'>LOCATION</a>

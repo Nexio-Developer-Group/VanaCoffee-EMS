@@ -10,13 +10,14 @@
 @layer theme {
 	:root {
 		--neutral: #ffffff;
-		--primary: #8E4917;
-		--primary-text: #75370A;
-		--primary-deep: #572908;
-		--primary-mild: #75370A;
+		--primary: #0F5B34;
+		--primary-text: #0F5B34;
+		--primary-deep: #0b4326;
+		--primary-mild: #0F5B34;
 		--primary-subtle: #2a85ff1a;
-		--secondary: #17196d;
-		--secondary-deep: #0a0c63;
+		--secondary: #A0A171;
+		--secondary-deep: #8c8d5d;
+  		--secondary-foreground: #A0A171;
 		--error: #ff6a55;
 		--error-subtle: #ff6a551a;
 		--success: #10b981;
@@ -45,6 +46,8 @@
 		--primary-deep: #0069f6;
 		--primary-mild: #4996ff;
 		--primary-subtle: #2a85ff1a;
+		 --secondary: #A0A171;
+  		--secondary-foreground: #A0A171;
 		--error: #ff6a55;
 		--error-subtle: #ff6a551a; 
 		--success: #10b981;
@@ -174,8 +177,8 @@
 	--popover-foreground: oklch(0.145 0 0);
 	--primary: oklch(0.205 0 0);
 	--primary-foreground: oklch(0.985 0 0);
-	--secondary: oklch(0.97 0 0);
-	--secondary-foreground: oklch(0.205 0 0);
+	--secondary: #A0A171;
+	--secondary-foreground: #A0A171;
 	--muted: oklch(0.97 0 0);
 	--muted-foreground: oklch(0.556 0 0);
 	--accent: oklch(0.97 0 0);

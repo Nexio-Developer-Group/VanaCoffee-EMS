@@ -76,7 +76,7 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="border-t border-warm-white/20 mt-8 pt-8 text-center">
             <p className="text-warm-white/60 text-sm">
-            © {new Date().getFullYear()} vans Coffee Cafe. All rights reserved. |
+            © {new Date().getFullYear()} Vans Cafe. All rights reserved. |
             <span className="text-caramel"> Best Coffee in Udaipur</span>
             </p>
         </div>
