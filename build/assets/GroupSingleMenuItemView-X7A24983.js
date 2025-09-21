@@ -1,1 +1,0 @@
-import{j as e}from"./index-CcQXU9dH.js";import"https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";import"https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";const o=()=>e.jsx("div",{children:"GroupSingleMenuItemView"});export{o as default};
