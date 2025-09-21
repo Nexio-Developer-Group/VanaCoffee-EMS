@@ -1,1 +1,0 @@
-import{j as e}from"./index-CnhmU0rm.js";import"https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";import"https://www.gstatic.com/firebasejs/12.2.1/firebase-analytics.js";const p=()=>e.jsx("div",{children:"GroupCollapseMenuItemView2"});export{p as default};
