@@ -17,7 +17,7 @@ const Simple = ({ children, content, ...rest }: SimpleProps) => {
         <div className="min-h-[1024px]">
             <header className="bg-white z-50 sticky top-0 border-b border-gray-200 shadow-xs">
                 <div className="mx-auto px-2 sm:px-10 py-4 flex items-center justify-between">
-                    <Link to="/home">
+                    <Link to="/">
                         <Logo logoWidth={80} />
                     </Link>
                     <div className='flex items-center sm:gap-10'>

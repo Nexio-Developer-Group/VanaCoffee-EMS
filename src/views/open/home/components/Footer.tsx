@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Section */}
           <div>
-            <Link to="/home">
+            <Link to="/">
               <Logo className="hidden lg:block"  mode="dark" logoWidth={120} imgClass="mb-3"/>
             </Link>
             <p className="text-warm-white/80 mb-4 leading-relaxed">
@@ -32,7 +32,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#menu" className="text-warm-white/80 hover:text-caramel transition-colors">
+                <a href="/menu" className="text-warm-white/80 hover:text-caramel transition-colors">
                   Menu
                 </a>
               </li>
