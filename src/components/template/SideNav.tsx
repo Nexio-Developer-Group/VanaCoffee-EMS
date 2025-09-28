@@ -40,8 +40,9 @@ const SideNav = ({
     background = true,
     className,
     contentClass,
-    mode,
+    mode, // eslint-disable-line
 }: SideNavProps) => {
+    // eslint-disable-next-line
     const defaultMode = useThemeStore((state) => state.mode)
     const direction = useThemeStore((state) => state.direction)
     const sideNavCollapse = useThemeStore(
@@ -68,9 +69,9 @@ const SideNav = ({
                 style={{ height: HEADER_HEIGHT }}
             >
                 <Logo
-                    imgClass="max-h-16"
-                    mode={mode || defaultMode}
-                    type={sideNavCollapse ? 'streamline' : 'full'}
+                    imgClass="max-h-24"
+                    mode={'dark'}
+                    type={sideNavCollapse ? 'navMini' : 'long'}
                     className={classNames(
                         sideNavCollapse && 'ltr:ml-[11.5px] ltr:mr-[11.5px]',
                         sideNavCollapse

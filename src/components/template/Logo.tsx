@@ -3,7 +3,7 @@ import { APP_NAME } from '@/constants/app.constant'
 import type { CommonProps } from '@/@types/common'
 
 interface LogoProps extends CommonProps {
-    type?: 'full' | 'streamline' | 'long'
+    type?: 'full' | 'streamline' | 'long' | 'navMini'
     mode?: 'light' | 'dark'
     imgClass?: string
     logoWidth?: number | string
