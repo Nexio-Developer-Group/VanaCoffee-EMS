@@ -155,7 +155,7 @@ Website: ${BRAND.website}
 
     const encodedMessage = encodeURIComponent(message);
 
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
+    window.open(`https://wa.me/91${phoneNumber}?text=${encodedMessage}`, "_blank");
   };
 
 
