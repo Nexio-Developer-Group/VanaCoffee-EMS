@@ -1,3 +1,4 @@
+import { Boxes, Coffee, Layers2, Receipt } from 'lucide-react'
 import {
     PiHouseLineDuotone,
     PiArrowsInDuotone,
@@ -15,7 +16,11 @@ const navigationIcon: NavigationIcons = {
     collapseMenu: <PiArrowsInDuotone />,
     groupSingleMenu: <PiBookOpenUserDuotone />,
     groupCollapseMenu: <PiBookBookmarkDuotone />,
-    groupMenu: <PiBagSimpleDuotone />
+    groupMenu: <PiBagSimpleDuotone />,
+    inventory: <Boxes/>,
+    items: <Coffee/>,
+    category: <Layers2/>,
+    billing: <Receipt/>
 }
 
 export default navigationIcon
