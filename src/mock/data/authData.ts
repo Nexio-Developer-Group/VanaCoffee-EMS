@@ -2,10 +2,10 @@ export const signInUserData = [
     {
         id: '21',
         avatar: '',
-        userName: 'John Doe',
-        email: 'admin-01@ecme.com',
-        authority: ['admin', 'user'],
-        password: '123Qwe',
+        userName: 'Naman Jain',
+        email: 'naman.jain@nexiotech.cloud',
+        authority: ['admin'],
+        password: 'Thenasu8@',
         accountUserName: 'admin',
     },
 ]
