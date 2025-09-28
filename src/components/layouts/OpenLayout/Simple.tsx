@@ -17,10 +17,10 @@ const Simple = ({ children, content, ...rest }: SimpleProps) => {
 
            
 
-            <header className="bg-white z-50 sticky top-0 border-b border-gray-200 shadow-xs">
-                <div className="mx-auto px-4 sm:px-10 py-4 flex items-center justify-between">
+            <header className="bg-white z-50 sticky top-0 border-b border-gray-200 shadow-sm">
+                <div className="mx-auto px-4 sm:px-10 py-0 flex items-center justify-between">
                     <Link to="/">
-                        <Logo logoWidth={80} />
+                        <Logo mode='dark' type='long' logoWidth={160} />
                     </Link>
                     <div className='flex items-center sm:gap-10'>
                         <Link to="/menu"><p className='text-primary-text hidden sm:flex  cusror-pointer font-bold font-spacing-wider'>MENU</p></Link>
