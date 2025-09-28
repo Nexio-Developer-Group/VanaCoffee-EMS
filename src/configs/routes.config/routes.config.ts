@@ -15,9 +15,21 @@ export const protectedRoutes: Routes = [
         authority: [ADMIN, USER, DEVELOPER],
     },
     {
-        key: 'billing',
-        path: '/Billing',
-        component: lazy(() => import('@/views/demo/SingleMenuView')),
+        key: 'billBook',
+        path: '/bill-book',
+        component: lazy(() => import('@/views/admin/billings')),
+        authority: [ADMIN, DEVELOPER],
+    },
+    {
+        key: 'billBook',
+        path: '/bill-book/new',
+        component: lazy(() => import('@/views/admin/billings/pages/CreateBillPage')),
+        authority: [ADMIN, DEVELOPER],
+    },
+    {
+        key: 'billBook',
+        path: '/bill-preview',
+        component: lazy(() => import('@/views/admin/billings/pages/BillPreview')),
         authority: [ADMIN, DEVELOPER],
     },
     {

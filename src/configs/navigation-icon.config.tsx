@@ -1,4 +1,4 @@
-import { Boxes, Coffee, Layers2, Receipt } from 'lucide-react'
+import { BookCheck, Boxes, Coffee, Layers2, Receipt } from 'lucide-react'
 import {
     PiHouseLineDuotone,
     PiArrowsInDuotone,
@@ -20,7 +20,8 @@ const navigationIcon: NavigationIcons = {
     inventory: <Boxes/>,
     items: <Coffee/>,
     category: <Layers2/>,
-    billing: <Receipt/>
+    billBook: <BookCheck/>,
+    newBill: <Receipt/>
 }
 
 export default navigationIcon
