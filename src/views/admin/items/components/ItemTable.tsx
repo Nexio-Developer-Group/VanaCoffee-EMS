@@ -4,14 +4,39 @@ import Button from '@/components/ui/Button'
 import { Item, deleteItem } from '@/services/ItemService'
 
 interface ItemTableProps {
-    items: Item[]
-    fetchItems: () => Promise<void>
+    fetchItems: (page?: number, search?: string) => Promise<{
+        items: Item[]
+        total: number
+        page: number
+        pages: number
+    }>
     onEdit: (item: Item) => void
 }
 
-const ItemTable = ({ items, fetchItems, onEdit }: ItemTableProps) => {
+const ItemTable = ({ fetchItems, onEdit }: ItemTableProps) => {
+    const [items, setItems] = useState<Item[]>([])
     const [search, setSearch] = useState('')
     const [loading, setLoading] = useState(false)
+    const [page, setPage] = useState(1)
+    const [totalPages, setTotalPages] = useState(1)
+
+    const loadItems = useCallback(async (p: number = 1, s: string = '') => {
+        setLoading(true)
+        try {
+            const res = await fetchItems(p, s)
+            setItems(res.items)
+            setPage(res.page)
+            setTotalPages(res.pages)
+        } catch (error) {
+            console.error(error)
+        } finally {
+            setLoading(false)
+        }
+    }, [fetchItems])
+
+    useEffect(() => {
+        loadItems()
+    }, [loadItems])
 
     const handleDelete = useCallback(
         async (id: string) => {
@@ -19,26 +44,26 @@ const ItemTable = ({ items, fetchItems, onEdit }: ItemTableProps) => {
             setLoading(true)
             try {
                 await deleteItem(id)
-                await fetchItems()
+                await loadItems(page, search)
             } catch (error) {
                 console.error(error)
             } finally {
                 setLoading(false)
             }
         },
-        [fetchItems]
+        [loadItems, page, search]
     )
 
-   
-    useEffect(() => {
-        fetchItems(); // fetch items only once when component mounts
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = e.target.value
+        setSearch(value)
+        loadItems(1, value) // reset to page 1 when searching
+    }
 
-
-    const filteredItems = items.filter(item =>
-        item.name.toLowerCase().includes(search.toLowerCase())
-    )
+    const handlePageChange = (newPage: number) => {
+        if (newPage < 1 || newPage > totalPages) return
+        loadItems(newPage, search)
+    }
 
     return (
         <div className="space-y-4">
@@ -47,7 +72,7 @@ const ItemTable = ({ items, fetchItems, onEdit }: ItemTableProps) => {
                     placeholder="Search item..."
                     value={search}
                     className="max-w-xs"
-                    onChange={e => setSearch(e.target.value)}
+                    onChange={handleSearch}
                 />
             </div>
 
@@ -63,8 +88,8 @@ const ItemTable = ({ items, fetchItems, onEdit }: ItemTableProps) => {
                         </tr>
                     </thead>
                     <tbody className="bg-white divide-y divide-gray-200">
-                        {filteredItems.length > 0 ? (
-                            filteredItems.map(item => (
+                        {items.length > 0 ? (
+                            items.map(item => (
                                 <tr key={item._id}>
                                     <td className="px-6 py-4 whitespace-nowrap">{item.name}</td>
                                     <td className="px-6 py-4 whitespace-nowrap">{item.category?.name || '-'}</td>
@@ -85,6 +110,27 @@ const ItemTable = ({ items, fetchItems, onEdit }: ItemTableProps) => {
                         )}
                     </tbody>
                 </table>
+            </div>
+
+            {/* Pagination */}
+            <div className="flex justify-center space-x-2 mt-2">
+                <Button
+                    size="sm"
+                    variant="default"
+                    disabled={page === 1}
+                    onClick={() => handlePageChange(page - 1)}
+                >
+                    Previous
+                </Button>
+                <span className="px-2 py-1 bg-gray-100 rounded">{page} / {totalPages}</span>
+                <Button
+                    size="sm"
+                    variant="default"
+                    disabled={page === totalPages}
+                    onClick={() => handlePageChange(page + 1)}
+                >
+                    Next
+                </Button>
             </div>
         </div>
     )

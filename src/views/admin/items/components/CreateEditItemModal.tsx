@@ -101,25 +101,26 @@ const CreateEditItemModal = ({ isOpen, onClose, itemToEdit, onSuccess }: CreateE
           </FormItem>
 
           <FormItem label="Category">
-            <Select
-              value={category?._id ?? 'none'}
-              onValueChange={val =>
-                setCategory(val === 'none' ? null : categories.find(c => c._id === val) || null)
-              }
-            >
-              <SelectTrigger>
-                <SelectValue placeholder="Select Category" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="none">None</SelectItem>
-                {categories.map(cat => (
-                  <SelectItem key={cat._id} value={cat._id}>
-                    {cat.name}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-          </FormItem>
+  <Select
+    value={category?._id ?? 'none'}
+    onValueChange={val =>
+      setCategory(val === 'none' ? null : categories.find(c => c._id === val) || null)
+    }
+  >
+    <SelectTrigger>
+      <SelectValue placeholder="Select Category" />
+    </SelectTrigger>
+    <SelectContent className="max-h-60 overflow-auto">
+      <SelectItem value="none">None</SelectItem>
+      {categories.map(cat => (
+        <SelectItem key={cat._id} value={cat._id}>
+          {cat.name}
+        </SelectItem>
+      ))}
+    </SelectContent>
+  </Select>
+</FormItem>
+
 
           <FormItem label="Price">
             <Input type="number" value={price} onChange={e => setPrice(Number(e.target.value))} />

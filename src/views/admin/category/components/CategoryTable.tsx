@@ -76,14 +76,14 @@ const CategoryTable = ({ onEdit }: CategoryTableProps) => {
                             filteredCategories.map(cat => (
                                 <tr key={cat._id}>
                                     <td className="px-6 py-4 whitespace-nowrap">{cat.name}</td>
-                                    <td className="px-6 py-4 whitespace-nowrap">{cat.description || '-'}</td>
+                                    <td className="px-6 py-4">{cat.description || '-'}</td>
                                     <td className="px-6 py-4 whitespace-nowrap">{cat.parentCategory || '-'}</td>
                                     <td className="px-6 py-4 whitespace-nowrap">{cat.isActive ? 'Active' : 'Inactive'}</td>
                                     <td className="px-6 py-4 whitespace-nowrap flex justify-end space-x-2">
-                                        <Button size="sm" variant="default" onClick={() => onEdit(cat)}>
+                                        <Button size="xs" variant="default" onClick={() => onEdit(cat)}>
                                             Edit
                                         </Button>
-                                        <Button size="sm" variant="solid" onClick={() => handleDelete(cat._id)}>
+                                        <Button size="xs" variant="solid" className='bg-red-500 hover:bg-red-600 text-white' onClick={() => handleDelete(cat._id)}>
                                             Delete
                                         </Button>
                                     </td>

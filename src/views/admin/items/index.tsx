@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useRef } from 'react'
 import Button from '@/components/ui/Button'
 import ItemTable from './components/ItemTable'
 import CreateEditItemModal from './components/CreateEditItemModal'
@@ -7,17 +7,31 @@ import { Item, getAllItems } from '@/services/ItemService'
 const ItemPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [editItem, setEditItem] = useState<Item | undefined>()
-  const [items, setItems] = useState<Item[]>([])
+  const tableRef = useRef<{ reload: () => void }>(null)
 
-  // Fetch items function
-  const fetchItems = useCallback(async () => {
-    try {
-      const res = await getAllItems()
-      setItems(res.items)
-    } catch (error) {
-      console.error(error)
-    }
-  }, [])
+  // Fetch items function (paginated)
+  const fetchItems = useCallback(
+    async (page: number = 1, search: string = '') => {
+      try {
+        const res = await getAllItems({ page, search })
+        return {
+          items: res.items,
+          total: res.total,
+          page: res.page,
+          pages: res.pages,
+        }
+      } catch (error) {
+        console.error(error)
+        return {
+          items: [],
+          total: 0,
+          page,
+          pages: 0,
+        }
+      }
+    },
+    []
+  )
 
   const openCreateModal = () => {
     setEditItem(undefined)
@@ -29,6 +43,13 @@ const ItemPage = () => {
     setIsModalOpen(true)
   }
 
+  const handleSuccess = async () => {
+    // Refresh the table after create/edit
+    if (tableRef.current) {
+      tableRef.current.reload()
+    }
+  }
+
   return (
     <div>
       <div className="flex justify-between mb-4">
@@ -38,14 +59,14 @@ const ItemPage = () => {
         </Button>
       </div>
 
-      {/* Pass items and fetchItems to table */}
-      <ItemTable items={items} fetchItems={fetchItems} onEdit={handleEdit} />
+      {/* Paginated ItemTable */}
+      <ItemTable ref={tableRef} fetchItems={fetchItems} onEdit={handleEdit} />
 
       <CreateEditItemModal
         isOpen={isModalOpen}
         itemToEdit={editItem}
         onClose={() => setIsModalOpen(false)}
-        onSuccess={fetchItems} // Refresh table after create/edit
+        onSuccess={handleSuccess} // refresh table after modal
       />
     </div>
   )
