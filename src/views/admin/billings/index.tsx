@@ -10,7 +10,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Trash2, Edit, Eye } from 'lucide-react';
+import { Trash2, Eye } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const BillsPage = () => {
@@ -169,9 +169,9 @@ const BillsPage = () => {
                   </td>
                   <td className="p-2 border">{bill.paymentMethod}</td>
                   <td className="p-2 border flex justify-center gap-2">
-                    <Button size="xs" onClick={() => navigate(`/bills/edit/${bill._id}`)}>
+                    {/* <Button size="xs" onClick={() => navigate(`/bills/edit/${bill._id}`)}>
                       <Edit size={16} />
-                    </Button>
+                    </Button> */}
                     <Button
                       size="xs"
                       onClick={() => navigate(`/bill-preview`, { state: { billData: billPreviewData } })}

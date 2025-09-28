@@ -72,7 +72,7 @@ export async function getBillById(billId: string) {
 
 export async function getAllBills(params?: { status?: string; page?: number; limit?: number }) {
   return ApiService.fetchDataWithAxios<{ status: number; data: Bill[]; total: number; page: number; pages: number }>({
-    url: '/bill/all',
+    url: '/bill',
     method: 'get',
     params,
   })

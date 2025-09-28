@@ -73,10 +73,29 @@ export async function deleteItem(id: string) {
   })
 }
 
-export async function getAllItems(params?: { page?: number; limit?: number; sortBy?: string; order?: 'asc' | 'desc'; category?: string; activeOnly?: boolean }) {
+interface GetAllItemsParams {
+  page?: number
+  limit?: number
+  sortBy?: string
+  order?: 'asc' | 'desc'
+  category?: string
+  activeOnly?: boolean
+  search?: string
+}
+
+export async function getAllItems(params?: GetAllItemsParams) {
   return ApiService.fetchDataWithAxios<GetItemsResponse>({
     url: '/item',
     method: 'get',
     params,
+  })
+}
+
+
+export async function getAllItemsNoLimit() {
+  return ApiService.fetchDataWithAxios<GetItemsResponse>({
+    url: '/item',
+    method: 'get',
+    params: { limit: 500 },
   })
 }

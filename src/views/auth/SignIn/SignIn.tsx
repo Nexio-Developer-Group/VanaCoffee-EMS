@@ -51,7 +51,7 @@ export const SignInBase = ({ disableSubmit }: SignInProps) => {
 
                 // Avatar fallback
                 if (!user.avatar) {
-                    const nameForAvatar = user.userName || user.phone || "User";
+                    const nameForAvatar = user.name || user.phone || "User";
                     user.avatar = `https://ui-avatars.com/api/?name=${encodeURIComponent(nameForAvatar)}`;
                 }
 

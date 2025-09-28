@@ -22,7 +22,7 @@ export type LoginReponse = {
         token: string
         user: {
             userId: string
-            userName?: string
+            name?: string
             roles: string[]
             avatar?: string
             email?: string
