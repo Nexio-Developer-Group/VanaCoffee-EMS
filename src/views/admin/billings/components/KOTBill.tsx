@@ -43,7 +43,7 @@ const KOTBill = ({ billData }: KOTBillProps) => {
       position: 'absolute',
       top: '-9999px',
       left: '-9999px',
-      width: '80mm', // Thermal receipt width
+      width: '70mm', // Thermal receipt width
       fontFamily: 'monospace',
       fontSize: '10px',
       lineHeight: '1.4',
@@ -94,10 +94,11 @@ const KOTBill = ({ billData }: KOTBillProps) => {
         <span>Subtotal:</span>
         <span>₹${billData.subTotal.toFixed(2)}</span>
       </div>
-      ${billData.discount > 0 ? `<div style="display:flex; justify-content:space-between;">
-        <span>Discount:</span>
-        <span>-₹${billData.discount.toFixed(2)}</span>
-      </div>` : ''}
+      <div style="display:flex; justify-content:space-between;">
+  <span>Discount:</span>
+  <span>${billData.discount > 0 ? `-₹${billData.discount.toFixed(2)}` : `₹0.00`}</span>
+</div>
+
       <div style="display:flex; justify-content:space-between; font-weight:bold;">
         <span>Total:</span>
         <span>₹${billData.grandTotal.toFixed(2)}</span>
